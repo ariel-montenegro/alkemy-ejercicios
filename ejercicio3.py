@@ -9,9 +9,29 @@ class Persona:
         self.nombre = nombre
         self.edad = edad
         self.profesion = profesion
-        
-    def caminar():
-        print('estoy caminando')
     
-    def andar_bici():
-        print('estoy andando en bici')        
+    def trabajar(self):
+        return 'Estoy trabajando'
+    
+    def caminar(self):
+        return 'estoy caminando'
+    
+    def andar_bici(self, bicicleta):
+        
+        return bicicleta.pedalear()
+
+class Bicicleta:
+    
+    def __init__(self, marca, color) -> None:
+        self.marca = marca
+        self.color = color
+        
+    
+    def pedalear(self):
+        return 'pedaleando'
+
+persona1 = Persona('Juan Lopez', 25, 'abogado')
+bici1 = Bicicleta('mazino', 'amarillo')
+
+print(f'estoy {persona1.andar_bici(bici1)}')
+
